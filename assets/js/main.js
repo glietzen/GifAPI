@@ -16,7 +16,7 @@ function addSearch() {
 }
 function returnSearch() {
     var gifSearch = $(".search-input").val().trim();
-    var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=5&offset=0&rating=PG&lang=en';
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=15&offset=0&rating=PG&lang=en';
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -30,6 +30,7 @@ $.ajax({
         var newContent = '';
         newContent = '<img src="' + arrImg + '">';
         $('.gif-area').html(newContent);
+        console.log(newContent);
     }
 });
 }
