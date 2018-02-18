@@ -1,5 +1,5 @@
-
-
+$(document).ready(function () {
+    
 
 var searches = [];
 
@@ -12,8 +12,14 @@ function addSearch() {
         history.text(searches[i]);
         $(".prev-searches").append(history);
     }
-    
 }
+
+
+$('.history-btn').on('click', function() {
+    console.log('hello');
+});
+
+
 function returnSearch() {
     var gifSearch = $(".search-input").val().trim();
     var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=15&offset=0&rating=PG&lang=en';
@@ -24,7 +30,6 @@ $.ajax({
     console.log(queryURL);
     console.log(response);
     console.log(response.data.length);
-    console.log(response.data[0].images.fixed_width.url);
     for (var i =0; i < response.data.length; i++) {
         arrImg = response.data[i].images.fixed_width.url;
         var newContent = '';
@@ -44,9 +49,6 @@ $('.search-btn').on('click', function() {
     returnSearch();
 });
 
-$('.history-btn').on('click', function() {
-    console.log('hello');
-});
 
 function renderGIFs () {
     for (var i = 0; i < response.data.length; i++) {
@@ -55,3 +57,5 @@ function renderGIFs () {
     $(".gif-area").html(newGifs);
     }
 }
+
+});

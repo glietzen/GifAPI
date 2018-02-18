@@ -11,10 +11,9 @@
 }
 .prev-searches {
     margin-bottom: 20px;
+    margin-top: 20px;
 }
-.search-btn {
-    margin: 10px;
-}
+
 .history-btn {
     margin: 5px;
 }
