@@ -1,6 +1,5 @@
 
-var gifSearch = $(this).attr("data-name");
-var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=25&offset=0&rating=PG&lang=en';
+
 
 var searches = [];
 
@@ -16,11 +15,22 @@ function addSearch() {
     
 }
 function returnSearch() {
+    var gifSearch = $(".search-input").val().trim();
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=5&offset=0&rating=PG&lang=en';
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
+    console.log(queryURL);
     console.log(response);
+    console.log(response.data.length);
+    console.log(response.data[0].images.fixed_width.url);
+    for (var i =0; i < response.data.length; i++) {
+        arrImg = response.data[i].images.fixed_width.url;
+        var newContent = '';
+        newContent = '<img src="' + arrImg + '">';
+        $('.gif-area').html(newContent);
+    }
 });
 }
 
@@ -36,3 +46,11 @@ $('.search-btn').on('click', function() {
 $('.history-btn').on('click', function() {
     console.log('hello');
 });
+
+function renderGIFs () {
+    for (var i = 0; i < response.data.length; i++) {
+    var newGifs = '';
+    newGifs += '<img src="' + response.data[i].bitly_gif_url + '"';
+    $(".gif-area").html(newGifs);
+    }
+}
