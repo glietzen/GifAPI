@@ -20,7 +20,7 @@ function addSearch() {
 
 function returnSearch() {
     var gifSearch = $(".search-input").val().trim();
-    var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=15&offset=0&rating=PG&lang=en';
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=15';
 $.ajax({
     url: queryURL,
     method: "GET"
