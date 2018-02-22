@@ -53,7 +53,7 @@ $.ajax({
     for (var i =0; i < response.data.length; i++) {
         arrImg = response.data[i].images.fixed_width.url;
         var newContent = '';
-        newContent = '<img src="' + arrImg + '">';
+        newContent = '<img class="gifsImg" src="' + arrImg + '">';
         $('.gif-area').append(newContent);
         console.log(newContent);
     }
