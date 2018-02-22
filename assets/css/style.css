@@ -28,4 +28,5 @@ footer {
 .gifsImg {
     box-sizing: border-box;
     margin: 10px;
+    display: inline-block;
 }

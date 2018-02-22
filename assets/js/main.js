@@ -30,6 +30,7 @@ $.ajax({
         arrImg = response.data[i].images.fixed_width.url;
         var newContent = '';
         newContent = '<img class="gifsImg" src="' + arrImg + '">';
+        newContent += '<p>Rating: ' + response.data[i].rating + '</p>'
         $('.gif-area').append(newContent);
         console.log(newContent);
     }
