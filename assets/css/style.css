@@ -24,3 +24,8 @@ header {
 footer {
     margin-top: 80vh;
 }
+
+.gifsImg {
+    box-sizing: border-box;
+    margin: 10px;
+}

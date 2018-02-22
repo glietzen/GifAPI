@@ -19,6 +19,7 @@ function addSearch() {
 
 
 function returnSearch() {
+    $('.gif-area').empty();
     var gifSearch = $(".search-input").val().trim();
     var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=15';
 $.ajax({
@@ -31,14 +32,15 @@ $.ajax({
     for (var i =0; i < response.data.length; i++) {
         arrImg = response.data[i].images.fixed_width.url;
         var newContent = '';
-        newContent = '<img src="' + arrImg + '">';
-        $('.gif-area').html(newContent);
+        newContent = '<img class="gifsImg" src="' + arrImg + '">';
+        $('.gif-area').append(newContent);
         console.log(newContent);
     }
 });
 }
 
 function returnHistory() {
+    $('.gif-area').empty();
     var gifSearch = $(this).attr("data-name");
     var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=ZGm4k7GW4QuBRafZmsbPRaol8zqSLXZh&q=' + gifSearch + '&limit=15&offset=0&rating=PG&lang=en';
 $.ajax({
@@ -52,7 +54,7 @@ $.ajax({
         arrImg = response.data[i].images.fixed_width.url;
         var newContent = '';
         newContent = '<img src="' + arrImg + '">';
-        $('.gif-area').html(newContent);
+        $('.gif-area').append(newContent);
         console.log(newContent);
     }
 });
