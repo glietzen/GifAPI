@@ -1,8 +1,9 @@
-$(document).ready(function () {
-    
+$(document).ready(function () {    
 
+//Holds previous searches
 var searches = [];
 
+//Adds prevoius searches as buttons to the history section
 function addSearch() {
     $(".prev-searches").empty();
     for (var i = 0; i < searches.length; i++) {
@@ -13,10 +14,6 @@ function addSearch() {
         $(".prev-searches").append(history);
     }
 }
-
-
-
-
 
 function returnSearch() {
     $('.gif-area').empty();
@@ -68,7 +65,6 @@ $('.search-btn').on('click', function() {
     addSearch();
     returnSearch();
 });
-
 
 function renderGIFs () {
     for (var i = 0; i < response.data.length; i++) {
