@@ -30,3 +30,15 @@ footer {
     margin: 10px;
     display: inline-block;
 }
+.gifAppend {
+    display: inline;
+}
+
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .row.display-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
